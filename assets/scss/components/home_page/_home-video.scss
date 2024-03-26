@@ -1,0 +1,14 @@
+.home-video {
+  .container {
+    video {
+      aspect-ratio: 16/9;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    i {
+      font-size: 5rem;
+      color: red;
+    }
+  }
+}

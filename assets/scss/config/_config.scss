@@ -1,0 +1,293 @@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@  FONTS  @@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@font-face {
+  font-family: 'light';
+  src: url(../fonts/IRANSansX-Light.ttf);
+}
+@font-face {
+  font-family: 'regular';
+  src: url(../fonts/IRANSansX-Regular.ttf);
+}
+
+@font-face {
+  font-family: 'bold';
+  src: url(../fonts/IRANSansX-Bold.ttf);
+}
+
+@font-face {
+  font-family: 'extra-bold';
+  src: url(../fonts/IRANSansX-ExtraBold.ttf);
+}
+
+@font-face {
+  font-family: 'black';
+  src: url(../fonts/IRANSansX-Black.ttf);
+}
+
+@font-face {
+  font-family: 'black-d4';
+  src: url(../fonts/IRANSansX-BlackD4.ttf);
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@  VARIABLES  @@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+:root {
+  // scale 1.125
+  --h1-font-size: 2.562rem;
+  --h2-font-size: 1.812rem;
+  --h3-font-size: 1.625rem;
+  --h4-font-size: 1.438rem;
+  --h5-font-size: 1.25rem;
+  --h6-font-size: 1.125rem;
+  --body-font-size: 1rem;
+  --small-font-size: 0.875rem;
+  --tiny-font-size: 0.812rem;
+
+  --primary-color: #4870ab;
+  --primary-color-light: #e9eef5;
+  --container-color: #fbfcfd;
+  --body-color: #f4f6fa;
+
+  --text-color-ultra-light: #ffffff;
+  --text-color-light: #737373;
+  --text-color-normal: #4d4d4d;
+  --text-color-dark: #262626;
+  --divider-color: #d9d9d9;
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@     BASE    @@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'regular';
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: var(--body-font-size);
+  background: var(--body-color);
+  color: var(--text-color-normal);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'bold';
+  color: var(--text-color-dark);
+}
+
+h1 {
+  font-size: var(--h1-font-size);
+}
+
+h2 {
+  font-size: var(--h2-font-size);
+}
+
+h3 {
+  font-size: var(--h3-font-size);
+}
+
+h4 {
+  font-size: var(--h4-font-size);
+}
+
+h5 {
+  font-size: var(--h5-font-size);
+}
+
+h6 {
+  font-size: var(--h6-font-size);
+}
+
+a {
+  text-decoration: none;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+  background: transparent;
+  font-size: var(--body-font-size);
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@  REUSABLE CLASSES   @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.container {
+  max-width: 1264px;
+  width: 100%;
+  margin-inline: auto;
+  padding-inline: 2rem;
+}
+
+.section {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.btn {
+  font-family: 'bold';
+  display: grid;
+  place-items: center;
+  width: max-content;
+  border-radius: 100rem;
+}
+
+.btn-fill {
+  background: var(--primary-color);
+  color: var(--text-color-ultra-light);
+}
+
+.btn-border {
+  background: var(--container-color);
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+}
+
+.section-title {
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+
+  svg {
+    width: 24px;
+    height: 24px;
+    stroke: red;
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@     SCROLL UP      @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// .scrollup {
+//   background: var(--primary-color);
+//   position: fixed;
+//   right: 1.5rem;
+//   bottom: -30%;
+//   z-index: 99;
+//   transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+//   border-radius: 50%;
+//   width: 48px;
+//   height: 48px;
+
+//   box-shadow: 0 0 1px var(--primary-color);
+
+//   svg {
+//     fill: var(--primary-color);
+//   }
+// }
+
+// .show-scrollup {
+//   bottom: 5rem;
+// }
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@     SCROLL BAR     @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--primary-color-light);
+  border-radius: 1rem;
+  margin-block: 0.5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--text-color-ultra-light);
+  border-radius: 1rem;
+  border: 2px solid var(--primary-color-light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@    BREAKPOINTS     @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (min-width: 3840px) {
+  body {
+    zoom: 2;
+  }
+}
+
+@media (min-width: 2048px) {
+  body {
+    zoom: 1.5;
+  }
+}
+
+@media screen and (max-width: 1440px) {
+  .container {
+    max-width: 1072px;
+    padding-inline: 1.5rem;
+  }
+
+  :root {
+    // scale 1.125  base 14px
+    --h1-font-size: 2rem;
+    --h2-font-size: 1.5rem;
+    --h3-font-size: 1.375rem;
+    --h4-font-size: 1.25rem;
+    --h5-font-size: 1.125rem;
+    --h6-font-size: 1rem;
+    --body-font-size: 0.875rem;
+    --small-font-size: 0.75rem;
+    --tiny-font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  :root {
+    //  scale 1.067  base 14px
+    --h1-font-size: 1.377rem;
+    --h2-font-size: 1.2rem;
+    --h3-font-size: 1.125rem;
+    --h4-font-size: 1.1rem;
+    --h5-font-size: 1rem;
+    --h6-font-size: 0.9rem;
+    --body-font-size: 0.875rem;
+    --small-font-size: 0.8rem;
+    --tiny-font-size: 0.75rem;
+  }
+
+  .container {
+    padding-inline: 1.25;
+  }
+}
