@@ -1,0 +1,243 @@
+.header {
+  border-bottom: 1px solid var(--divider-color);
+
+  .banner {
+    width: 100%;
+    height: 72px;
+    background-image: url('./../img/banner-desktop.gif');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    cursor: pointer;
+  }
+
+  nav {
+    height: 6rem;
+    display: flex;
+    align-items: center;
+
+    .nav__logo {
+      margin-left: 2rem;
+    }
+
+    .nav__menu {
+      .nav__menu-header {
+        display: none;
+      }
+
+      .nav__list {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+
+        .nav__item {
+          .nav__link {
+            display: flex;
+            align-items: center;
+            gap: 0.2rem;
+
+            span {
+              color: var(--text-color-normal);
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .nav__btns {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-right: auto;
+
+      a {
+        border: 1px solid var(--divider-color);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        height: 44px;
+        border-radius: 12px;
+
+        .icon {
+          svg {
+            stroke: var(--text-color-normal);
+          }
+        }
+      }
+
+      .login {
+        padding-inline: 1rem 1.5rem;
+
+        span {
+          color: var(--text-color-normal);
+        }
+      }
+
+      .cart {
+        width: 44px;
+      }
+    }
+
+    .nav__toggle {
+      display: none;
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@  BREAKPOINTS  @@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+  .header {
+    nav {
+      height: 5.5rem;
+
+      .nav__menu {
+        .nav__list {
+          gap: 1.2rem;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .header {
+    .overlay {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 100;
+      opacity: 0;
+      pointer-events: none;
+      background: hsla(0, 0%, 0%, 5%);
+      backdrop-filter: blur(5px);
+      transition: opacity 0.3s;
+    }
+
+    .nav {
+      height: 5rem;
+      position: relative;
+
+      .nav__logo {
+        width: 88px;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin-inline: auto;
+      }
+
+      .nav__menu {
+        background: var(--body-color);
+        box-shadow: 0 0 10px hsl(0, 0%, 0%, 5%);
+        position: fixed;
+        right: -100%;
+        top: 0;
+        width: 45%;
+        height: 100vh;
+        z-index: 100;
+        transition: right 0.3s ease-in-out;
+
+        .nav__menu-header {
+          height: 5rem;
+          display: flex;
+          align-items: center;
+          padding-inline: 1.5rem;
+          border-bottom: 1px solid var(--divider-color);
+
+          .nav__menu-logo {
+            img {
+              width: 88px;
+            }
+          }
+        }
+
+        .nav__list {
+          flex-direction: column;
+          padding-inline: 1.5rem;
+          padding-block: 1.5rem;
+
+          .nav__item {
+            width: 100%;
+          }
+        }
+      }
+
+      .nav__btns {
+        gap: 0.5rem;
+
+        a {
+          .icon {
+            svg {
+              width: 20px;
+              height: 20px;
+            }
+          }
+        }
+
+        .login {
+          padding-inline: unset;
+          width: 40px;
+          height: 40px;
+
+          span {
+            display: none;
+          }
+        }
+
+        .cart {
+          width: 40px;
+          height: 40px;
+        }
+      }
+
+      .nav__toggle {
+        cursor: pointer;
+        order: -1;
+        width: 32px;
+        height: 32px;
+        display: grid;
+
+        svg {
+          width: 32px;
+          height: 32px;
+          stroke: var(--text-color-normal);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .header {
+    .banner {
+      height: 56px;
+      background-image: url('./../img/banner-mobile.gif');
+    }
+    .nav {
+      .nav__menu {
+        width: 75%;
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@@@@@ JS CLASSES @@@@@@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+.header .overlay.show-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.header .nav .nav__menu.show-menu {
+  right: 0;
+}
+
+.remove-body-scroll {
+  overflow: hidden;
+}
