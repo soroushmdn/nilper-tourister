@@ -1,0 +1,230 @@
+.home-newpr {
+  .container {
+    position: relative;
+
+    .section-title {
+      margin-bottom: 5.5rem;
+    }
+
+    .blur {
+      background: hsla(216, 41%, 48%, 12%);
+      width: 100%;
+      height: 1rem;
+      filter: blur(12px);
+      position: absolute;
+      z-index: -1;
+      inset: auto 0 -1rem 0;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+
+      .card {
+        position: relative;
+        background: var(--container-color);
+        border-radius: 1.5rem;
+        padding: 2rem;
+
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+
+        .badge {
+          position: absolute;
+          top: -11px;
+          left: 2rem;
+
+          span {
+            position: absolute;
+            font-family: 'heavy-d4';
+            font-size: var(--small-font-size);
+            color: var(--text-color-ultra-light);
+            inset: 6px 0 0 0;
+            margin-inline: auto;
+            width: fit-content;
+            height: fit-content;
+          }
+        }
+
+        figure {
+          position: relative;
+
+          img {
+            position: absolute;
+            inset: -5rem 0 auto 0;
+            margin-inline: auto;
+          }
+        }
+
+        .data {
+          z-index: 1;
+          background: var(--container-color);
+          padding-top: 1.5rem;
+          border-top: 1px solid var(--divider-color);
+
+          div:first-child {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.75rem;
+
+            .price {
+              display: flex;
+              align-items: center;
+              gap: 4px;
+
+              svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+
+          div:last-child {
+            display: grid;
+            grid-template-columns: 1fr max-content;
+            align-items: center;
+
+            p {
+              color: var(--text-color-normal);
+            }
+
+            .btn {
+              font-size: var(--small-font-size);
+              height: 2rem;
+              padding-inline: 1rem;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+
+      .card:hover .data div:last-child .btn {
+        background: var(--primary-color);
+        color: var(--text-color-ultra-light);
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+  .home-newpr {
+    .container {
+      .section-title {
+        margin-bottom: 5rem;
+      }
+
+      .cards {
+        gap: 1rem;
+
+        .card {
+          border-radius: 1.25rem;
+          padding: 1.5rem;
+
+          .badge {
+            left: 1.5rem;
+          }
+
+          figure {
+            img {
+              height: 176px;
+              inset: -4rem 0 auto 0;
+            }
+          }
+
+          .data {
+            div:first-child {
+              margin-bottom: 0.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-newpr {
+    .container {
+      .section-title {
+        margin-bottom: 1.5rem;
+      }
+
+      .cards {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 55%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+        padding-top: 2rem;
+
+        .card {
+          .badge {
+            top: -10px;
+
+            img {
+              width: 64px;
+            }
+
+            span {
+              inset: 4px 0 0 0;
+            }
+          }
+
+          figure {
+            img {
+              height: 160px;
+              inset: -3rem 0 auto 0;
+            }
+          }
+        }
+
+        .card:hover .data div:last-child .btn {
+          background: var(--container-color);
+          color: var(--primary-color);
+        }
+      }
+
+      .cards::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-newpr {
+    .container {
+      .cards {
+        grid-auto-columns: 90%;
+        padding-top: 1rem;
+
+        .card {
+          border-radius: 1rem;
+          padding: 1.25rem;
+
+          .badge {
+            left: 1.25rem;
+          }
+
+          figure {
+            img {
+              height: 144px;
+              inset: -2.1rem 0 auto auto;
+            }
+          }
+
+          .data {
+            padding-top: 1rem;
+          }
+        }
+      }
+    }
+  }
+}
