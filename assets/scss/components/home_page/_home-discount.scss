@@ -1,0 +1,311 @@
+.home-discount {
+  .container {
+    position: relative;
+
+    .blur {
+      background: hsla(216, 41%, 48%, 12%);
+      width: 100%;
+      height: 1rem;
+      filter: blur(12px);
+
+      position: absolute;
+      z-index: -1;
+      bottom: -1rem;
+      left: 0;
+      right: 0;
+    }
+
+    .home-discount-title {
+      position: relative;
+      background: var(--primary-color);
+      width: 100%;
+      height: 4.5rem;
+      border-radius: 1rem;
+      margin-bottom: 1rem;
+      overflow: hidden;
+
+      display: grid;
+      place-items: center;
+
+      img {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+      }
+
+      > div {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+
+        width: 240px;
+        height: 48px;
+        background: var(--primary-color);
+        filter: blur(15px);
+      }
+
+      h4 {
+        color: var(--text-color-ultra-light);
+        z-index: 1;
+      }
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+
+      .card {
+        display: grid;
+        grid-template-columns: max-content 1fr;
+        border-radius: 1.5rem;
+        overflow: hidden;
+
+        figure {
+          position: relative;
+          background: var(--primary-color-light);
+          padding: 2rem 3rem;
+
+          img {
+            filter: drop-shadow(0 0 6px hsla(0, 100%, 0%, 24%));
+          }
+
+          div {
+            background: var(--primary-color);
+            color: var(--text-color-ultra-light);
+
+            position: absolute;
+            inset: auto 0 0 0;
+
+            height: 112px;
+            display: grid;
+            place-content: center;
+            text-align: center;
+
+            span {
+              font-family: 'black';
+            }
+
+            strong {
+              font-family: 'black';
+              font-size: var(--h2-font-size);
+            }
+          }
+        }
+
+        .data {
+          background: var(--container-color);
+          padding: 2rem;
+          display: grid;
+          gap: 1.5rem;
+
+          ul {
+            display: grid;
+            gap: 0.75rem;
+
+            li {
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
+
+              div {
+                background: var(--text-color-normal);
+                width: 6px;
+                height: 6px;
+                border-radius: 2rem;
+              }
+            }
+          }
+
+          .divider {
+            background: var(--divider-color);
+            width: 100%;
+            height: 1px;
+          }
+
+          .prices {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            div {
+              display: flex;
+              align-items: center;
+              gap: 0.4rem;
+            }
+
+            div:first-child {
+              span {
+                font-family: 'light';
+                text-decoration: line-through;
+              }
+            }
+
+            div:last-child {
+              span {
+                font-family: 'bold';
+                font-size: var(--h5-font-size);
+                color: var(--text-color-dark);
+              }
+            }
+          }
+
+          a {
+            width: 100%;
+            height: 44px;
+          }
+        }
+      }
+
+      .card:hover .data a {
+        background: var(--primary-color);
+        color: var(--text-color-ultra-light);
+      }
+    }
+  }
+}
+
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+// @@@@@@@@@        BREAKPOINTS        @@@@@@@@@
+// @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@media screen and (max-width: 1440px) {
+  .home-discount {
+    .container {
+      .cards {
+        gap: 1rem;
+
+        .card {
+          figure {
+            padding: 1.5rem 2rem;
+
+            img {
+              width: 102px;
+            }
+
+            div {
+              height: 88px;
+            }
+          }
+
+          .data {
+            padding: 1.5rem;
+            gap: 1rem;
+
+            ul {
+              gap: 0.5rem;
+            }
+
+            a {
+              height: 40px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .home-discount {
+    .container {
+      .cards {
+        grid-template-columns: none;
+        grid-auto-flow: column;
+        grid-auto-columns: 64%;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+
+        .card:hover .data a {
+          background: var(--container-color);
+          color: var(--primary-color);
+        }
+      }
+
+      .cards::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .home-discount {
+    .container {
+      .home-discount-title {
+        height: 3.5rem;
+        border-radius: 0.75rem;
+
+        img {
+          inset: 0 auto auto auto;
+          width: 272px;
+          height: 48px;
+        }
+
+        > div {
+          width: 160px;
+          height: 32px;
+          background: var(--primary-color);
+          filter: blur(10px);
+        }
+      }
+
+      .cards {
+        grid-auto-columns: 90%;
+
+        .card {
+          figure {
+            div {
+              height: 72px;
+            }
+          }
+
+          .data {
+            padding: 1.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .home-discount {
+    .container {
+      .cards {
+        grid-auto-columns: 90%;
+
+        .card {
+          grid-template-columns: 1fr;
+          border-radius: 1rem;
+
+          figure {
+            padding: 3rem 2rem 2rem 2rem;
+
+            img {
+              width: 104px;
+              margin: auto;
+            }
+
+            div {
+              // inset: 0 3rem auto 3rem;
+              // height: 40px;
+              // grid-template-columns: max-content max-content;
+              // align-items: center;
+              // gap: 0.5rem;
+              // border-radius: 0 0 1.25rem 1.25rem;
+
+              span {
+                display: none;
+              }
+
+              inset: 0 2rem auto auto;
+              height: 56px;
+              width: 56px;
+              border-radius: 0 0 10rem 10rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
